@@ -13,6 +13,7 @@ public interface IJobExecutionService
     Task RemoveDuplicateAsync(DuplicateRemovalOptions options, CancellationToken cancellationToken);
     Task MergeAsync(MergeOptions options, CancellationToken cancellationToken);
     Task SplitAsync(SplitOptions options, CancellationToken cancellationToken);
+    Task FilterUserPassAsync(UserPassFilterOptions options, CancellationToken cancellationToken);
 }
 
 public sealed class UiLogSink : IUiLogSink
@@ -26,17 +27,20 @@ public sealed class JobExecutionService : IJobExecutionService
     private readonly DuplicateRemoverService _duplicateRemover;
     private readonly FileMergeService _mergeService;
     private readonly FileSplitService _splitService;
+    private readonly FolderUserPassFilterService _folderUserPassFilterService;
     private readonly IUiLogSink _logSink;
 
     public JobExecutionService(
         DuplicateRemoverService duplicateRemover,
         FileMergeService mergeService,
         FileSplitService splitService,
+        FolderUserPassFilterService folderUserPassFilterService,
         IUiLogSink logSink)
     {
         _duplicateRemover = duplicateRemover;
         _mergeService = mergeService;
         _splitService = splitService;
+        _folderUserPassFilterService = folderUserPassFilterService;
         _logSink = logSink;
     }
 
@@ -59,5 +63,12 @@ public sealed class JobExecutionService : IJobExecutionService
         _logSink.Write($"Running split: {options.InputPath} -> {options.OutputFolder}");
         await _splitService.ExecuteAsync(options, cancellationToken);
         _logSink.Write("split completed.");
+    }
+
+    public async Task FilterUserPassAsync(UserPassFilterOptions options, CancellationToken cancellationToken)
+    {
+        _logSink.Write($"Running user:pass filter: {options.InputFolderPath} -> {options.OutputPath}");
+        await _folderUserPassFilterService.ExecuteAsync(options, cancellationToken);
+        _logSink.Write("user:pass filter completed.");
     }
 }

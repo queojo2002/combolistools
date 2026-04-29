@@ -11,6 +11,7 @@ public static class DependencyInjection
         services.AddSingleton<DuplicateRemoverService>();
         services.AddSingleton<FileMergeService>();
         services.AddSingleton<FileSplitService>();
+        services.AddSingleton<FolderUserPassFilterService>();
         return services;
     }
 }

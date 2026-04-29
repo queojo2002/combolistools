@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\src\CombolistTools.Core\CombolistTools.Core.csproj" />
     <ProjectReference Include="..\..\src\CombolistTools.Application\CombolistTools.Application.csproj" />
     <ProjectReference Include="..\..\src\CombolistTools.Infrastructure\CombolistTools.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\CombolistTools.Presentation.Wpf\CombolistTools.Presentation.Wpf.csproj" />
   </ItemGroup>
 
 </Project>

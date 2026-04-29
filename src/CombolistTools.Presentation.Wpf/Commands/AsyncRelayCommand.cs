@@ -22,17 +22,31 @@ public sealed class AsyncRelayCommand : ICommand
     {
         if (!CanExecute(parameter)) return;
         _isRunning = true;
-        RaiseCanExecuteChanged();
+        RaiseCanExecuteChangedSafe();
         try
         {
-            await _execute();
+            // Ensure the execute delegate runs on a thread-pool thread even if it returns an already-completed Task.
+            await Task.Run(_execute).ConfigureAwait(false);
         }
         finally
         {
             _isRunning = false;
-            RaiseCanExecuteChanged();
+            RaiseCanExecuteChangedSafe();
         }
     }
 
-    public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+    public void RaiseCanExecuteChanged() => RaiseCanExecuteChangedSafe();
+
+    private void RaiseCanExecuteChangedSafe()
+    {
+        // In WPF, CanExecuteChanged handlers may touch UI-bound state and must be raised on the UI thread.
+        var dispatcher = System.Windows.Application.Current?.Dispatcher;
+        if (dispatcher is not null && !dispatcher.CheckAccess())
+        {
+            dispatcher.BeginInvoke(new Action(() => CanExecuteChanged?.Invoke(this, EventArgs.Empty)));
+            return;
+        }
+
+        CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+    }
 }

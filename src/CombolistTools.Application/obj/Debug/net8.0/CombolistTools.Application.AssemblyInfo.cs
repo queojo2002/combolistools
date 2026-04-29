@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CombolistTools.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+580c7ec66254ee35fb51147e19818289f22b8fcd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1706ffcce956636bea456b75aab554d40f98c9e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CombolistTools.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CombolistTools.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
