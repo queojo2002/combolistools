@@ -1,0 +1,12 @@
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\bin\Debug\net8.0\CombolistTools.Core.deps.json
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\bin\Debug\net8.0\CombolistTools.Core.dll
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\bin\Debug\net8.0\CombolistTools.Core.pdb
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.AssemblyInfoInputs.cache
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.AssemblyInfo.cs
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.csproj.CoreCompileInputs.cache
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.sourcelink.json
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.dll
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\refint\CombolistTools.Core.dll
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\CombolistTools.Core.pdb
+D:\Workspace\CombolistTools\CombolistTools\src\CombolistTools.Core\obj\Debug\net8.0\ref\CombolistTools.Core.dll

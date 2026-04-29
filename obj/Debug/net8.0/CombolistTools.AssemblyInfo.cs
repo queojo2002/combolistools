@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CombolistTools")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+580c7ec66254ee35fb51147e19818289f22b8fcd")]
 [assembly: System.Reflection.AssemblyProductAttribute("CombolistTools")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CombolistTools")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

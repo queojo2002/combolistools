@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="../tests/CombolistTools.IntegrationTests/CombolistTools.IntegrationTests.csproj" />
+  <Project Path="../tests/CombolistTools.UnitTests/CombolistTools.UnitTests.csproj" />
+  <Project Path="CombolistTools.Application/CombolistTools.Application.csproj" />
+  <Project Path="CombolistTools.Core/CombolistTools.Core.csproj" />
+  <Project Path="CombolistTools.Infrastructure/CombolistTools.Infrastructure.csproj" />
+  <Project Path="CombolistTools.Presentation.Console/CombolistTools.Presentation.Console.csproj" />
+  <Project Path="CombolistTools.Presentation.Wpf/CombolistTools.Presentation.Wpf.csproj" />
+</Solution>

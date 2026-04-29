@@ -1,0 +1,5 @@
+D:\Workspace\CombolistTools\CombolistTools\obj\Debug\net8.0\CombolistTools.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\CombolistTools\CombolistTools\obj\Debug\net8.0\CombolistTools.AssemblyInfoInputs.cache
+D:\Workspace\CombolistTools\CombolistTools\obj\Debug\net8.0\CombolistTools.AssemblyInfo.cs
+D:\Workspace\CombolistTools\CombolistTools\obj\Debug\net8.0\CombolistTools.csproj.CoreCompileInputs.cache
+D:\Workspace\CombolistTools\CombolistTools\obj\Debug\net8.0\CombolistTools.sourcelink.json

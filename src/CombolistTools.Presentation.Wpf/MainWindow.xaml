@@ -1,0 +1,125 @@
+<Window x:Class="CombolistTools.Presentation.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:CombolistTools.Presentation.Wpf.ViewModels"
+        mc:Ignorable="d"
+        Title="CombolistTools - Large File Processor" Height="760" Width="1100" MinHeight="720" MinWidth="1000">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="220" />
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
+            <TabItem Header="Remove Duplicate" DataContext="{Binding RemoveDuplicate}">
+                <Grid Margin="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Input file" Grid.Row="0" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="0,6" />
+                    <Button Grid.Row="0" Grid.Column="2" Content="Choose..." Margin="8,6,0,6" MinWidth="90" Command="{Binding BrowseInputCommand}" />
+                    <TextBlock Text="Output file" Grid.Row="1" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding OutputPath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="0,6" />
+                    <Button Grid.Row="1" Grid.Column="2" Content="Choose..." Margin="8,6,0,6" MinWidth="90" Command="{Binding BrowseOutputCommand}" />
+                    <TextBlock Text="Column indexes (csv)" Grid.Row="2" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding ColumnIndexes, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,6" />
+                    <TextBlock Text="Delimiter" Grid.Row="3" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Delimiter, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,6" Width="80" HorizontalAlignment="Left" />
+
+                    <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,14,0,0">
+                        <Button Content="Run" Width="140" Margin="0,0,8,0" Command="{Binding RunCommand}" />
+                        <Button Content="Cancel" Width="140" Command="{Binding CancelCommand}" />
+                        <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="{Binding IsRunning, StringFormat=Running: {0}}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Merge Files" DataContext="{Binding Merge}">
+                <Grid Margin="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Input folder" Grid.Row="0" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding InputFolder, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="0,6" />
+                    <Button Grid.Row="0" Grid.Column="2" Content="Choose..." Margin="8,6,0,6" MinWidth="90" Command="{Binding BrowseInputFolderCommand}" />
+                    <TextBlock Text="Output file" Grid.Row="1" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding OutputPath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="0,6" />
+                    <Button Grid.Row="1" Grid.Column="2" Content="Choose..." Margin="8,6,0,6" MinWidth="90" Command="{Binding BrowseOutputCommand}" />
+                    <TextBlock Text="Search pattern" Grid.Row="2" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding SearchPattern, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,6" />
+                    <TextBlock Text="Column indexes (csv)" Grid.Row="3" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding ColumnIndexes, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,6" />
+                    <TextBlock Text="Delimiter" Grid.Row="4" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Delimiter, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,6" Width="80" HorizontalAlignment="Left" />
+
+                    <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,14,0,0">
+                        <Button Content="Run" Width="140" Margin="0,0,8,0" Command="{Binding RunCommand}" />
+                        <Button Content="Cancel" Width="140" Command="{Binding CancelCommand}" />
+                        <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="{Binding IsRunning, StringFormat=Running: {0}}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Split File" DataContext="{Binding Split}">
+                <Grid Margin="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Input file" Grid.Row="0" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="0,6" />
+                    <Button Grid.Row="0" Grid.Column="2" Content="Choose..." Margin="8,6,0,6" MinWidth="90" Command="{Binding BrowseInputCommand}" />
+                    <TextBlock Text="Output folder" Grid.Row="1" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding OutputFolder, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="0,6" />
+                    <Button Grid.Row="1" Grid.Column="2" Content="Choose..." Margin="8,6,0,6" MinWidth="90" Command="{Binding BrowseOutputFolderCommand}" />
+                    <TextBlock Text="Threshold" Grid.Row="2" Grid.Column="0" Margin="0,6" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Threshold, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,6" />
+                    <CheckBox Content="Split by size (bytes). Uncheck = split by lines" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" IsChecked="{Binding IsBySize}" Margin="0,6" />
+
+                    <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,14,0,0">
+                        <Button Content="Run" Width="140" Margin="0,0,8,0" Command="{Binding RunCommand}" />
+                        <Button Content="Cancel" Width="140" Command="{Binding CancelCommand}" />
+                        <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="{Binding IsRunning, StringFormat=Running: {0}}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <GroupBox Grid.Row="1" Header="Execution Logs" Margin="0,12,0,0">
+            <ListBox ItemsSource="{Binding Logs}" />
+        </GroupBox>
+    </Grid>
+</Window>
