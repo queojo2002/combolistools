@@ -9,6 +9,7 @@ public sealed class MainViewModel : ViewModelBase
     public MergeViewModel Merge { get; }
     public SplitViewModel Split { get; }
     public FilterUserPassViewModel FilterUserPass { get; }
+    public CapitalizeLineViewModel CapitalizeLine { get; }
     public ObservableCollection<string> Logs { get; } = [];
 
     public MainViewModel(IJobExecutionService jobs, IUiLogSink logSink, IPathPickerService picker)
@@ -17,6 +18,7 @@ public sealed class MainViewModel : ViewModelBase
         Merge = new MergeViewModel(jobs, logSink, picker);
         Split = new SplitViewModel(jobs, logSink, picker);
         FilterUserPass = new FilterUserPassViewModel(jobs, logSink, picker);
+        CapitalizeLine = new CapitalizeLineViewModel(jobs, logSink, picker);
 
         if (logSink is UiLogSink sink)
         {
