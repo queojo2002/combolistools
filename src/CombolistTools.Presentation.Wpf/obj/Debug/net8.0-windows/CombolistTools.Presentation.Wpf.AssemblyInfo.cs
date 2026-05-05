@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CombolistTools.Presentation.Wpf")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c414be85ab814b26adee264286b69f5a6d5aa13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e4ae5f948c44965ef8a1423f44e40bc49a05882")]
 [assembly: System.Reflection.AssemblyProductAttribute("CombolistTools.Presentation.Wpf")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CombolistTools.Presentation.Wpf")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
