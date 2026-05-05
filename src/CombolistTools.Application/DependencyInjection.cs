@@ -12,6 +12,7 @@ public static class DependencyInjection
         services.AddSingleton<FileMergeService>();
         services.AddSingleton<FileSplitService>();
         services.AddSingleton<FolderUserPassFilterService>();
+        services.AddSingleton<CapitalizeLineService>();
         return services;
     }
 }

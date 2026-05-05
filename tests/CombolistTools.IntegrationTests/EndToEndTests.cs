@@ -68,6 +68,21 @@ public class EndToEndTests
         Assert.Equal(["1,a", "2,c"], lines);
     }
 
+    [Fact]
+    public async Task CapitalizeLineService_TransformsFirstCharacterPerLine()
+    {
+        var dir = CreateTempDir();
+        var input = Path.Combine(dir, "input.txt");
+        var output = Path.Combine(dir, "output.txt");
+        await File.WriteAllLinesAsync(input, ["abc", "xyz", ""]);
+
+        var svc = new CapitalizeLineService(new AutoDetectFileReader(), new AutoDetectFileWriter());
+        await svc.ExecuteAsync(new CapitalizeLineOptions { InputPath = input, OutputPath = output }, CancellationToken.None);
+
+        var lines = await File.ReadAllLinesAsync(output);
+        Assert.Equal(["Abc", "Xyz", ""], lines);
+    }
+
     private static DuplicateRemoverService BuildDuplicateRemover(bool parallel) =>
         new(
             new AutoDetectFileReader(),
